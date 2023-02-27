@@ -1,7 +1,8 @@
 .navbar {
-  height: 70px;
+  height: 65px;
   width: 100vw;
-  background-color: red;
+  background-color: teal;
+  // background-color: #6439ff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,16 +12,31 @@
     padding: 0px 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
 
     .left {
       flex: 1;
+
+      img {
+        height: 55px;
+        width: 55px;
+      }
     }
     .center {
       flex: 1;
+      h3 {
+        color: white;
+        text-align: center;
+      }
     }
     .right {
       flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 10px;
+      h4 {
+        color: white;
+      }
     }
   }
 }
