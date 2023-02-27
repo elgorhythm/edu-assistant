@@ -1,17 +1,24 @@
+@import "../../global.scss";
+
 .navbar {
   height: 65px;
-  width: 100vw;
-  background-color: teal;
-  // background-color: #6439ff;
+  width: 100%;
+  background-color: $main-color;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 3;
+  position: fixed;
 
   .wrapper {
     width: 100%;
     padding: 0px 20px;
     display: flex;
     align-items: center;
+
+    @include mobile {
+      padding: 0px 5px;
+    }
 
     .left {
       flex: 1;
@@ -22,12 +29,13 @@
       }
     }
     .center {
-      flex: 1;
+      flex: 3;
       h3 {
         color: white;
         text-align: center;
       }
     }
+
     .right {
       flex: 1;
       display: flex;
@@ -35,6 +43,14 @@
       padding-right: 10px;
       h4 {
         color: white;
+      }
+    }
+
+    .left,
+    .right,
+    .center {
+      @include mobile {
+        transform: scale(0.7);
       }
     }
   }

@@ -9,7 +9,7 @@ const Navbar = () => {
         </div>
         <div className="center">
           <h3>
-            ALIS - Bucheki Branch
+            American Lyceum International School - Bucheki Branch
           </h3>
         </div>
         <div className="right">
