@@ -39,7 +39,7 @@ const Dashboard = () => {
       </div>
       <div className="charts">
       <Chart title="Last 6 Months (Collections)" aspect={2 / 1} />
-      {/* <Chart title="Last 6 Months (Expenses)" aspect={2 / 1} /> */}
+      <Chart title="Last 6 Months (Expenses)" aspect={2 / 1} />
       </div>
     </div>
   );
