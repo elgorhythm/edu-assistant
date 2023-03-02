@@ -25,6 +25,12 @@ const Dashboard = () => {
     expenses: 441234,
     balance: 6675546,
   };
+  const arrears = {
+    title: "Arrears",
+    income: 24345,
+    expenses: 441234,
+    balance: 2541,
+  };
   return (
     <div className="dashboard">
       <div className="widgets">
@@ -35,6 +41,7 @@ const Dashboard = () => {
         />
         <Widget type={"recurring"} category={tuition} />
         <Widget type={"recurring"} category={paperFund} />
+        <Widget type={"arrears"} category={arrears} />
         <Widget type={"accounts"} category={accounts} />
       </div>
       <div className="charts">

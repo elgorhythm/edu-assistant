@@ -19,22 +19,6 @@ const Chart = ({ aspect, title }) => {
     { name: "Page D", uv: 300, pv: 2400, amt: 2500 },
     { name: "Page E", uv: 500, pv: 3000, amt: 3000 },
   ];
-  const data = [
-    { name: "January", Total: 1200 },
-    { name: "February", Total: 2100 },
-    { name: "March", Total: 800 },
-    { name: "April", Total: 1600 },
-    { name: "May", Total: 900 },
-    { name: "June", Total: 1700 },
-  ];
-  const data2 = [
-    { name: "January", Total: 800 },
-    { name: "February", Total: 1700 },
-    { name: "March", Total: 400 },
-    { name: "April", Total: 1200 },
-    { name: "May", Total: 500 },
-    { name: "June", Total: 1300 },
-  ];
   return (
         <div className="chart">
         <div className="title">collections</div>

@@ -78,6 +78,20 @@ const StatsWidget = (props) => {
         </>
       );
       break;
+    case("arrears"):
+    component = (
+      <>
+        <div className="left">
+          <span className="title">{category.title}</span>
+          <span className="counter">
+            {`${category.balance.toLocaleString("en-US")}`}
+          </span>
+          <span className="link">{category.link}</span>
+        </div>
+        <div className="right">
+        </div>
+      </>
+    );
 
     default:
       break;
