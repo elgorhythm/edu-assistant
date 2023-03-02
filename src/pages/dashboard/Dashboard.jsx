@@ -1,8 +1,38 @@
 import Chart from "./comps/Chart";
 import Widget from "./comps/Widget";
 import "./dashboard.scss";
+import { monthlyIncome, monthlyExpenses } from "../../temp";
+import { months } from "../../CONSTS";
+import { useEffect, useState } from "react";
 
 const Dashboard = () => {
+  const [incChartData, setIncChartData] = useState([]);
+  const [expChartData, setExpChartData] = useState([]);
+
+  useEffect(() => {
+    const getIncChartList = (monthlyIncome) => {
+      const keys = Object.keys(monthlyIncome);
+      if (keys.length > 6) keys.splice(0, keys.length - 6);
+      const list = keys.map((item) => ({
+        month: `${months[item.slice(4, 6) - 1]}-${item.slice(0, 4)}`,
+        ...monthlyIncome[item],
+      }));
+      setIncChartData(list);
+    };
+    const getExpChartList = (monthlyExpenses) => {
+      const keys = Object.keys(monthlyExpenses);
+      if (keys.length > 6) keys.splice(0, keys.length - 6);
+      const list = keys.map((item) => ({
+        month: `${months[item.slice(4, 6) - 1]}-${item.slice(0, 4)}`,
+        ...monthlyExpenses[item],
+      }));
+      setExpChartData(list);
+    };
+
+    if (monthlyIncome) getIncChartList(monthlyIncome);
+    if (monthlyExpenses) getExpChartList(monthlyExpenses);
+  }, [monthlyIncome, monthlyExpenses]);
+
   const studentsStats = { title: "Students", count: 195 };
   const staffStats = { title: "Staff", count: 23 };
   const tuition = {
@@ -45,8 +75,18 @@ const Dashboard = () => {
         <Widget type={"accounts"} category={accounts} />
       </div>
       <div className="charts">
-      <Chart title="Last 6 Months (Collections)" aspect={2 / 1} />
-      <Chart title="Last 6 Months (Expenses)" aspect={2 / 1} />
+        <Chart
+          title="Last 6 Months (Collections)"
+          aspect={2 / 1}
+          data={incChartData && incChartData}
+          dataType="income"
+        />
+        <Chart
+          title="Last 6 Months (Expenses)"
+          aspect={2 / 1}
+          data={expChartData && expChartData}
+          dataType="expenses"
+        />
       </div>
     </div>
   );

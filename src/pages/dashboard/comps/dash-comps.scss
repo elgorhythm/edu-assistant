@@ -1,3 +1,5 @@
+@import "../../../global.scss";
+
 .widget {
   display: flex;
   padding: 10px;
@@ -7,6 +9,10 @@
   height: 100px;
   width: 220px;
   justify-content: space-between;
+
+  @include mobile {
+    width: 80%;
+  }
 
   .left,
   .right {
@@ -46,6 +52,8 @@
 
   .title {
     margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 400;
   }
 
   .chartGrid {

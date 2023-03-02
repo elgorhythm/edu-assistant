@@ -25,12 +25,12 @@ const StatsWidget = (props) => {
             <span className="counter">
               {studentsStats ? studentsStats.count : 0}
             </span>
-            {/* <span className="link">See students details</span> */}
+            <span className="link">See details</span>
           </div>
           <div className="right">
             <span className="title">Staff</span>
             <span className="counter">{staffStats ? staffStats.count : 0}</span>
-            {/* <span className="link">See staff details</span> */}
+            <span className="link">See details</span>
           </div>
         </>
       );
@@ -62,7 +62,7 @@ const StatsWidget = (props) => {
             <span className="counter">
               {showBalance
                 ? `${category.balance.toLocaleString("en-US")}`
-                : "-----"}
+                : "-------"}
             </span>
             <span className="link">{category.link}</span>
           </div>
@@ -78,20 +78,21 @@ const StatsWidget = (props) => {
         </>
       );
       break;
-    case("arrears"):
-    component = (
-      <>
-        <div className="left">
-          <span className="title">{category.title}</span>
-          <span className="counter">
-            {`${category.balance.toLocaleString("en-US")}`}
-          </span>
-          <span className="link">{category.link}</span>
-        </div>
-        <div className="right">
-        </div>
-      </>
-    );
+    case "arrears":
+      component = (
+        <>
+          <div className="left">
+            <span className="title">{category.title}</span>
+            <span className="counter">
+              {`${category.balance.toLocaleString("en-US")}`}
+            </span>
+            <span className="link">{category.link}</span>
+            <span className="link">See details</span>
+          </div>
+
+          <div className="right"></div>
+        </>
+      );
 
     default:
       break;
