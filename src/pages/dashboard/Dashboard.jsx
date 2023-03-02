@@ -76,13 +76,13 @@ const Dashboard = () => {
       </div>
       <div className="charts">
         <Chart
-          title="Last 6 Months (Collections)"
+          title="Collections - Last 6 months"
           aspect={2 / 1}
           data={incChartData && incChartData}
           dataType="income"
         />
         <Chart
-          title="Last 6 Months (Expenses)"
+          title="Expenses - Last 6 months"
           aspect={2 / 1}
           data={expChartData && expChartData}
           dataType="expenses"
