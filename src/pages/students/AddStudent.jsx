@@ -7,17 +7,52 @@ import {
   FormControl,
 } from "@mui/material";
 import { classes } from "../../CONSTS";
+import { ClearOutlined, DoneOutlined } from "@mui/icons-material";
 
 const AddStudent = () => {
   const totalCount = 101;
+  const user = { email: "adnan@email.com" };
 
-  const handleSubmit = () => {};
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+
+    let newStudent = {
+      name: data.get("name").toUpperCase(),
+      father: data.get("father").toUpperCase(),
+      regNo: data.get("regNo"),
+      dateOfBirth: data.get("dob"),
+      gender: data.get("gender"),
+      class: data.get("class"),
+      section: data.get("section"),
+      address: data.get("address"),
+      prospectus: {
+        amount: +data.get("prospectus"),
+        balance: +data.get("prospectus"),
+      },
+      registration: {
+        amount: +data.get("registration"),
+        balance: +data.get("registration"),
+      },
+      tuition: {
+        amount: +data.get("tuition"),
+        payments: [],
+      },
+      arrears: +data.get("arrears"),
+      contactNo: data.get("contact"),
+      admissionDate: data.get("adDate"),
+      createdBy: user.email,
+      createdAt: new Date(),
+    };
+    console.log(newStudent);
+  };
   return (
     <div className="students">
-      <form onSubmit={handleSubmit}>
-        <h3>New Admission</h3>
-        <span> Details</span>
-        <div className="input-wrappers">
+      <h3>New Admission</h3>
+      <form 
+      // onSubmit={handleSubmit}
+      >
+        <div className="text-fields-wrapper">
           <TextField
             variant="standard"
             size="small"
@@ -26,6 +61,7 @@ const AddStudent = () => {
             name="name"
             defaultValue=""
             className="text-field"
+            autoFocus
           />
           <TextField
             variant="standard"
@@ -36,8 +72,6 @@ const AddStudent = () => {
             defaultValue=""
             className="text-field"
           />
-        </div>
-        <div className="input-wrappers">
           <TextField
             variant="standard"
             size="small"
@@ -60,8 +94,6 @@ const AddStudent = () => {
             InputLabelProps={{ shrink: true }}
             disabled={true}
           />
-        </div>
-        <div className="input-wrappers">
           <TextField
             variant="standard"
             size="small"
@@ -73,10 +105,9 @@ const AddStudent = () => {
             defaultValue=""
             InputLabelProps={{ shrink: true }}
           />
-          <FormControl className="text-field">
+          <FormControl className="text-field" variant="standard">
             <InputLabel>Gender *</InputLabel>
             <Select
-              variant="standard"
               size="small"
               required
               label="Gender"
@@ -87,12 +118,9 @@ const AddStudent = () => {
               <MenuItem value={"Female"}>Female</MenuItem>
             </Select>
           </FormControl>
-        </div>
-        <div className="input-wrappers">
-          <FormControl className="text-field">
+          <FormControl className="text-field" variant="standard">
             <InputLabel>Class *</InputLabel>
             <Select
-              variant="standard"
               size="small"
               required
               label="Class"
@@ -114,8 +142,6 @@ const AddStudent = () => {
             name="section"
             className="text-field"
           />
-        </div>
-        <div className="input-wrappers">
           <TextField
             variant="standard"
             size="small"
@@ -132,26 +158,6 @@ const AddStudent = () => {
             name="contact"
             className="text-field"
           />
-        </div>
-        <div className="input-wrappers">
-          <TextField
-            variant="standard"
-            size="small"
-            required
-            label="Address"
-            name="address"
-            className="text-field"
-          />
-          <TextField
-            variant="standard"
-            size="small"
-            required
-            label="Contact No"
-            name="contact"
-            className="text-field"
-          />
-        </div>
-        <div className="input-wrappers">
           <TextField
             variant="standard"
             size="small"
@@ -162,16 +168,14 @@ const AddStudent = () => {
             className="text-field"
           />
           <TextField
-         variant="standard"
-         size="small"
-         required
-         type="number"
-         label="Registration Fee"
-         name="registration"
-         className="text-field"
+            variant="standard"
+            size="small"
+            required
+            type="number"
+            label="Registration Fee"
+            name="registration"
+            className="text-field"
           />
-        </div>
-        <div className="input-wrappers">
           <TextField
             variant="standard"
             size="small"
@@ -182,15 +186,27 @@ const AddStudent = () => {
             className="text-field"
           />
           <TextField
-         variant="standard"
-         size="small"
-         required
-         type="number"
-         label="Arrears"
-         name="arrears"
-         className="text-field"
-         defaultValue={0}
+            variant="standard"
+            size="small"
+            required
+            type="number"
+            label="Arrears"
+            name="arrears"
+            className="text-field"
+            defaultValue={0}
           />
+        </div>
+
+        <div className="buttons-wrapper">
+          <button
+            className="button cancel"
+            onClick={() => console.log("cancel kar dia")}
+          >
+            <ClearOutlined />
+          </button>
+          <button className="button" onClick={handleSubmit}>
+            <DoneOutlined />
+          </button>
         </div>
       </form>
     </div>
