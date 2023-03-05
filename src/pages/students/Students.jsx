@@ -3,21 +3,27 @@ import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React, { useState } from "react";
 
 const Students = () => {
-    const[searchBy, setSearchBy]=useState('name')
-    const [searchTerm, setSearchTerm]=useState("")
-
+  const [searchBy, setSearchBy] = useState("name");
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <div className="students">
+      <h3>All Students</h3>
+
       <div className="top-container">
         <div className="search-wrapper">
-          <input onChange={e=>setSearchTerm(e.target.value)}/>
+          <input
+            placeholder="Search"
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
           <FormControl className="form-control" variant="standard">
             <InputLabel className="input-label">Search by</InputLabel>
-            <Select size="small" 
-            defaultValue="name" 
-            onChange={(e)=>setSearchBy(e.target.value)}
-            sx={{ fontSize: "12px", borderBottom: 'none' }}>
+            <Select
+              size="small"
+              defaultValue="name"
+              onChange={(e) => setSearchBy(e.target.value)}
+              sx={{ fontSize: "12px", borderBottom: "none" }}
+            >
               <MenuItem value="name" sx={{ fontSize: "12px" }}>
                 Name
               </MenuItem>
@@ -45,6 +51,7 @@ const Students = () => {
           </button>
         </div>
       </div>
+      <div className="students-container">students</div>
     </div>
   );
 };
