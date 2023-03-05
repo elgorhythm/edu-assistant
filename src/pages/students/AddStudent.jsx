@@ -47,7 +47,7 @@ const AddStudent = () => {
     console.log(newStudent);
   };
   return (
-    <div className="students">
+    <div className="add-student">
       <h3>New Admission</h3>
       <form onSubmit={handleSubmit}>
         <div className="text-fields-wrapper">
