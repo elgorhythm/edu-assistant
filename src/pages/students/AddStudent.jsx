@@ -49,9 +49,7 @@ const AddStudent = () => {
   return (
     <div className="students">
       <h3>New Admission</h3>
-      <form 
-      // onSubmit={handleSubmit}
-      >
+      <form onSubmit={handleSubmit}>
         <div className="text-fields-wrapper">
           <TextField
             variant="standard"
@@ -201,10 +199,11 @@ const AddStudent = () => {
           <button
             className="button cancel"
             onClick={() => console.log("cancel kar dia")}
+            type="button"
           >
             <ClearOutlined />
           </button>
-          <button className="button" onClick={handleSubmit}>
+          <button className="button">
             <DoneOutlined />
           </button>
         </div>

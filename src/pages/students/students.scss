@@ -24,7 +24,6 @@
       justify-content: center;
       gap: 50px;
       .text-field {
-        gap: 50px;
         width: 300px;
         @include mobile {
           width: 100%;
