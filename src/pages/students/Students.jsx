@@ -1,21 +1,51 @@
-import { PersonAddOutlined, PrintOutlined } from "@mui/icons-material";
+import {
+  PersonAddOutlined,
+  PrintOutlined,
+  SearchOutlined,
+} from "@mui/icons-material";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React, { useState } from "react";
+import { studentsList } from "../../temp";
+import StudentCard from "./StudentCard";
 
 const Students = () => {
   const [searchBy, setSearchBy] = useState("name");
   const [searchTerm, setSearchTerm] = useState("");
 
+  const list = [
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+    { a: 12345 },
+  ];
+
   return (
     <div className="students">
       <h3>All Students</h3>
-
       <div className="top-container">
         <div className="search-wrapper">
-          <input
-            placeholder="Search"
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+          <SearchOutlined className="icon" />
+          <input onChange={(e) => setSearchTerm(e.target.value)} />
           <FormControl className="form-control" variant="standard">
             <InputLabel className="input-label">Search by</InputLabel>
             <Select
@@ -36,12 +66,13 @@ const Students = () => {
               <MenuItem value="class" sx={{ fontSize: "12px" }}>
                 Class
               </MenuItem>
-              <MenuItem value="contact" sx={{ fontSize: "12px" }}>
+              <MenuItem value="contactNo" sx={{ fontSize: "12px" }}>
                 Contact No
               </MenuItem>
             </Select>
           </FormControl>
         </div>
+
         <div className="buttons-wrapper">
           <button className="print">
             <PrintOutlined />
