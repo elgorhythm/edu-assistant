@@ -88,9 +88,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 20px;
+      gap: 10px;
       border: 0.5px solid lightgray;
       padding: 0px 10px;
+      .icon {
+        color: rgba(128, 128, 128, 0.766);
+        margin: none;
+        font-size: 20px;
+      }
       input {
         border: none;
         outline: none;
@@ -118,8 +123,8 @@
       gap: 30px;
       margin-right: 30px;
       @include mobile {
-       gap: 10px;
-       margin-right: 0px;   
+        gap: 10px;
+        margin-right: 0px;
       }
       button {
         width: 45px;
@@ -140,7 +145,6 @@
         &.print {
           background-color: gray;
         }
-       
       }
     }
   }
@@ -148,5 +152,5 @@
   .students-container {
     display: flex;
     padding: 20px;
-  }
-}
+      }
+    }
