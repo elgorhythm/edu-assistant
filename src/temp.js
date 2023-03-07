@@ -194,25 +194,25 @@ export const monthlyExpenses = {
 };
 
 export const studentsList=[{
-  name: "Student Student",
-  father: "Father Father",
-  regNo: "2023-205",
+  name: "Student Student 1",
+  father: "Father Father 1",
+  regNo: "2023-205-1",
   dateOfBirth: "2018-07-14",
   gender: "Male",
   class: "Class-1",
   tuition: 4500,
-  contactNo: "03331234567",
+  contactNo: "03331234001",
   id:1
 },
 {
-  name: "Student Student",
-  father: "Father Father",
-  regNo: "2023-205",
+  name: "Student Student 2",
+  father: "Father Father 2",
+  regNo: "2023-205-2",
   dateOfBirth: "2018-07-14",
   gender: "Male",
-  class: "Class-1",
+  class: "Class-2",
   tuition: 4500,
-  contactNo: "03331234567",
+  contactNo: "03331234002",
   id:2
   
   
@@ -220,48 +220,48 @@ export const studentsList=[{
 
 },
 {
-  name: "Student Student",
-  father: "Father Father",
-  regNo: "2023-205",
+  name: "Student Student 3",
+  father: "Father Father 3",
+  regNo: "2023-205-3",
   dateOfBirth: "2018-07-14",
   gender: "Male",
-  class: "Class-1",
+  class: "Class-3",
   tuition: 4500,
-  contactNo: "03331234567",
+  contactNo: "03331234003",
   id:3
 
 },
 {
-  name: "Student Student",
-  father: "Father Father",
-  regNo: "2023-205",
+  name: "Student Student 4",
+  father: "Father Father 4",
+  regNo: "2023-205-4",
   dateOfBirth: "2018-07-14",
   gender: "Male",
-  class: "Class-1",
+  class: "Class-4",
   tuition: 4500,
-  contactNo: "03331234567",
+  contactNo: "03331234004",
   id:4
 
 },
 {
-  name: "Student Student",
-  father: "Father Father",
-  regNo: "2023-205",
+  name: "Student Student 5",
+  father: "Father Father 5",
+  regNo: "2023-205-5",
   dateOfBirth: "2018-07-14",
   gender: "Male",
   class: "Class-1",
   tuition: 4500,
-  contactNo: "03331234567",
+  contactNo: "03331234005",
   id:5
 
 },
 {
-  name: "Student Student",
-  father: "Father Father",
-  regNo: "2023-205",
+  name: "Student Student 6",
+  father: "Father Father 6",
+  regNo: "2023-205-6",
   dateOfBirth: "2018-07-14",
   gender: "Male",
-  class: "Class-1",
+  class: "Class-6",
   tuition: 4500,
   contactNo: "03331234567",
   id:6
