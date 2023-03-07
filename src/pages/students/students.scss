@@ -84,6 +84,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0px 20px;
+
     .search-wrapper {
       display: flex;
       align-items: center;
@@ -91,6 +92,9 @@
       gap: 10px;
       border: 0.5px solid lightgray;
       padding: 0px 10px;
+      @include mobile {
+        transform: scale(0.7);
+      }
       .icon {
         color: rgba(128, 128, 128, 0.766);
         margin: none;
@@ -125,6 +129,7 @@
       @include mobile {
         gap: 10px;
         margin-right: 0px;
+        transform: scale(0.7);
       }
       button {
         width: 45px;
@@ -158,10 +163,6 @@
   table {
     width: 100%;
     border-collapse: collapse;
-
-    tr {
-      text-align: center;
-    }
     thead {
       background-color: lightblue;
       -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
@@ -173,6 +174,9 @@
       th {
         padding: 10px;
         font-size: 16px;
+        @include mobile {
+          font-size: 10px;
+        }
       }
     }
     tbody {
@@ -181,33 +185,52 @@
         box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
         border-radius: 5px;
         cursor: pointer;
+
         td {
           font-size: 14px;
           padding: 7px;
+
+          @include mobile {
+            font-size: 10px;
+          }
         }
       }
     }
 
-    th,
-    td {
-      @include mobile {
-        transform: scale(0.7);
-      }
-      #sm {
+    tr {
+      #sr {
         flex: 0.5;
-        color: red;
+        text-align: center;
       }
-      #md {
-        flex: 1;
+      #name {
+        flex: 2;
+        text-align: left;
       }
-      #lg {
-        flex: 1.5;
+      #father {
+        flex: 2;
         @include mobile {
           display: none;
         }
       }
-      #xlg {
+      #class {
+        flex: 1;
+        text-align: left;
+      }
+      #reg-no {
+        flex: 1;
+        @include mobile {
+          display: none;
+        }
+      }
+      #contact {
         flex: 2;
+        text-align: left;
+      }
+      #tuition {
+        flex: 1;
+        @include mobile {
+          display: none;
+        }
       }
     }
   }

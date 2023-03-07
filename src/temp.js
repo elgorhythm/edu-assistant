@@ -294,7 +294,7 @@ export const studentsList = [
     id: 9,
   },
   {
-    name: "Student Student",
+    name: "Student Student student",
     father: "Father Father",
     regNo: "2023-205",
     dateOfBirth: "2018-07-14",

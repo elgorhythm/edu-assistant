@@ -10,13 +10,13 @@ const StudentCard = (props) => {
       <table>
         <thead>
           <tr>
-            <th id="sm">Sr.</th>
-            <th id="xlg">Name</th>
-            <th id="xlg">Father</th>
-            <th id="md">Class</th>
-            <th id="md">Reg No.</th>
-            <th id="lg">Contact</th>
-            <th id="md">Tuition</th>
+            <th id="sr">Sr.</th>
+            <th id="name">Name</th>
+            <th id="father">Father</th>
+            <th id="class">Class</th>
+            <th id="reg-no">Reg No.</th>
+            <th id="contact">Contact</th>
+            <th id="tuition">Tuition</th>
           </tr>
         </thead>
         <tbody>
@@ -26,13 +26,15 @@ const StudentCard = (props) => {
             )
             .map((item, index) => (
               <tr key={index}>
-                <td id="sm">{index + 1}</td>
-                <td id="xlg">{item.name}</td>
-                <td id="xlg">{item.father}</td>
-                <td id="md">{item.class}</td>
-                <td id="md">{item.regNo}</td>
-                <td id="lg">{item.contactNo}</td>
-                <td id="md">{item.tuition}</td>
+                <td id="sr" className="sm">
+                  {index + 1}
+                </td>
+                <td id="name">{item.name}</td>
+                <td id="father">{item.father}</td>
+                <td id="class">{item.class}</td>
+                <td id="reg-no">{item.regNo}</td>
+                <td id="contact">{item.contactNo}</td>
+                <td id="tuition">{item.tuition}</td>
               </tr>
             ))}
         </tbody>
