@@ -2,6 +2,9 @@ import React from "react";
 
 const StudentCard = (props) => {
   const studentsList = props.studentsList;
+  const searchTerm = props.searchTerm;
+  const searchBy = props.searchBy;
+
   return (
     <div className="student-card">
       <table>
@@ -17,17 +20,21 @@ const StudentCard = (props) => {
           </tr>
         </thead>
         <tbody>
-          {studentsList.map((item, index) => (
-            <tr key={index}>
-              <td id="sm">{index + 1}</td>
-              <td id="xlg">{item.name}</td>
-              <td id="xlg">{item.father}</td>
-              <td id="md">{item.class}</td>
-              <td id="md">{item.regNo}</td>
-              <td id="lg">{item.contactNo}</td>
-              <td id="md">{item.tuition}</td>
-            </tr>
-          ))}
+          {studentsList
+            .filter((student) =>
+              student[searchBy].toLowerCase().includes(searchTerm.toLowerCase())
+            )
+            .map((item, index) => (
+              <tr key={index}>
+                <td id="sm">{index + 1}</td>
+                <td id="xlg">{item.name}</td>
+                <td id="xlg">{item.father}</td>
+                <td id="md">{item.class}</td>
+                <td id="md">{item.regNo}</td>
+                <td id="lg">{item.contactNo}</td>
+                <td id="md">{item.tuition}</td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>

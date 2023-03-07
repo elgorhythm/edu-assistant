@@ -5,41 +5,16 @@ import {
 } from "@mui/icons-material";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React, { useState } from "react";
+import Loading from "../../components/loading/Loading";
 import { studentsList } from "../../temp";
 import StudentCard from "./StudentCard";
 
 const Students = () => {
   const [searchBy, setSearchBy] = useState("name");
   const [searchTerm, setSearchTerm] = useState("");
+  // const studentsList = null;
 
-  const list = [
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-    { a: 12345 },
-  ];
-
-  return (
+  return studentsList ? (
     <div className="students">
       <h3>All Students</h3>
       <div className="top-container">
@@ -83,9 +58,15 @@ const Students = () => {
         </div>
       </div>
       <div className="students-container">
-        <StudentCard studentsList={studentsList} />
+        <StudentCard
+          studentsList={studentsList}
+          searchTerm={searchTerm}
+          searchBy={searchBy}
+        />
       </div>
     </div>
+  ) : (
+    <Loading />
   );
 };
 
