@@ -82,7 +82,9 @@ const Students = () => {
           </button>
         </div>
       </div>
-      <div className="students-container">students</div>
+      <div className="students-container">
+        <StudentCard studentsList={studentsList} />
+      </div>
     </div>
   );
 };

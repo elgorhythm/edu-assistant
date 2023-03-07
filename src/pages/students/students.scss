@@ -150,7 +150,58 @@
   }
 
   .students-container {
-    display: flex;
     padding: 20px;
+  }
+}
+
+.student-card {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    tr {
+      text-align: center;
+    }
+    thead {
+      background-color: lightblue;
+      -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+      box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+      border-radius: 3px;
+      position: sticky;
+      top: $nav-height;
+
+      th {
+        padding: 10px;
+        font-size: 16px;
       }
     }
+    tbody {
+      tr {
+        -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+        box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+        border-radius: 5px;
+
+        cursor: pointer;
+        td {
+          font-size: 14px;
+          padding: 7px;
+        }
+      }
+    }
+
+    th,
+    td {
+      #sm {
+        flex: 0.5;
+      }
+      #md {
+        flex: 1;
+      }
+      #lg {
+        flex: 1.5;
+      }
+      #xlg {
+        flex: 2;
+      }
+    }
+  }
+}
