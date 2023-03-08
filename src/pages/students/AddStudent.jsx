@@ -11,7 +11,7 @@ import { ClearOutlined, DoneOutlined } from "@mui/icons-material";
 import { student } from "../../temp";
 
 const AddStudent = (props) => {
-  const type = "edit";
+  const type = "asdf";
   const totalCount = 101;
   const user = { email: "adnan@email.com" };
 
@@ -22,29 +22,39 @@ const AddStudent = (props) => {
     let studentData = {
       name: data.get("name").toUpperCase(),
       father: data.get("father").toUpperCase(),
+      admissionDate: data.get("adDate"),
       regNo: data.get("regNo"),
       dateOfBirth: data.get("dob"),
       gender: data.get("gender"),
       class: data.get("class"),
       section: data.get("section"),
       address: data.get("address"),
+      contactNo: data.get("contact"),
       prospectus: {
-        amount: +data.get("prospectus"),
-        balance: +data.get("prospectus"),
+        amount: data.get("prospectus"),
+        balance:
+          type === "edit"
+            ? student.prospectus.balance +
+              data.get("prospectus") -
+              student.prospectus.amount
+            : data.get("prospectus"),
       },
       registration: {
-        amount: +data.get("registration"),
-        balance: +data.get("registration"),
+        amount: data.get("registration"),
+        balance:
+          type === "edit"
+            ? student.registration.balance +
+              data.get("registration") -
+              student.registration.amount
+            : data.get("registration"),
       },
       tuition: {
-        amount: +data.get("tuition"),
-        payments: [],
+        amount: data.get("tuition"),
+        payments: type === "edit" ? student.tuition.payments : [],
       },
-      arrears: +data.get("arrears"),
-      contactNo: data.get("contact"),
-      admissionDate: data.get("adDate"),
-      createdBy: user.email,
-      createdAt: new Date(),
+      arrears: data.get("arrears"),
+      createdBy: type === "edit" ? student.createdBy : user.email,
+      createdAt: type === "edit" ? student.createdAt : new Date(),
     };
     console.log(studentData);
   };
@@ -106,7 +116,7 @@ const AddStudent = (props) => {
             name="dob"
             className="text-field"
             type="date"
-            defaultValue=""
+            defaultValue={type === "edit" ? student.dateOfBirth : ""}
             InputLabelProps={{ shrink: true }}
           />
           <FormControl className="text-field" variant="standard">
@@ -116,7 +126,7 @@ const AddStudent = (props) => {
               required
               label="Gender"
               name="gender"
-              defaultValue=""
+              defaultValue={type === "edit" ? student.gender : ""}
             >
               <MenuItem value={"Male"}>Male</MenuItem>
               <MenuItem value={"Female"}>Female</MenuItem>
@@ -129,7 +139,7 @@ const AddStudent = (props) => {
               required
               label="Class"
               name="class"
-              defaultValue=""
+              defaultValue={type === "edit" ? student.class : ""}
             >
               {classes &&
                 classes.map((clas) => (
@@ -145,6 +155,7 @@ const AddStudent = (props) => {
             label="Section (optional)"
             name="section"
             className="text-field"
+            defaultValue={type === "edit" ? student.section : ""}
           />
           <TextField
             variant="standard"
@@ -153,6 +164,7 @@ const AddStudent = (props) => {
             label="Address"
             name="address"
             className="text-field"
+            defaultValue={type === "edit" ? student.address : ""}
           />
           <TextField
             variant="standard"
@@ -161,6 +173,7 @@ const AddStudent = (props) => {
             label="Contact No"
             name="contact"
             className="text-field"
+            defaultValue={type === "edit" ? student.contactNo : ""}
           />
           <TextField
             variant="standard"
@@ -170,6 +183,7 @@ const AddStudent = (props) => {
             label="Prospectus Fee"
             name="prospectus"
             className="text-field"
+            defaultValue={type === "edit" ? student.prospectus.amount : ""}
           />
           <TextField
             variant="standard"
@@ -179,6 +193,7 @@ const AddStudent = (props) => {
             label="Registration Fee"
             name="registration"
             className="text-field"
+            defaultValue={type === "edit" ? student.registration.amount : ""}
           />
           <TextField
             variant="standard"
@@ -188,6 +203,7 @@ const AddStudent = (props) => {
             label="Tuition Fee"
             name="tuition"
             className="text-field"
+            defaultValue={type === "edit" ? student.tuition.amount : ""}
           />
           <TextField
             variant="standard"

@@ -86,6 +86,7 @@ export const monthlyIncome = {
     canBeClosed: false,
   },
 };
+
 export const monthlyExpenses = {
   202208: {
     Miscellaneous: 5,
@@ -200,7 +201,7 @@ export const student = {
   dateOfBirth: "2001-05-01",
   gender: "Male",
   class: "M.J",
-  section: "N/A",
+  section: "C",
   address: "Jaranwala",
   prospectus: {
     amount: 500,
