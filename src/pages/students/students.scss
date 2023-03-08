@@ -235,3 +235,78 @@
     }
   }
 }
+
+.student-details {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    border-radius: 10px;
+    flex-wrap: wrap;
+    padding: 20px;
+    .top {
+      display: flex;
+      justify-content: flex-end;
+      button {
+        width: 40px;
+        height: 25px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        background-color: white;
+        border: none;
+        outline: none;
+        background-color: #e9ffff;
+        right: 10px;
+        &:hover {
+          background-color: lightblue;
+        }
+        .icon {
+          font-size: 20px;
+        }
+      }
+    }
+    .bottom {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      .left {
+        width: 180px;
+        height: 250px;
+        border: 0.5px solid lightgray;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 10px;
+
+        img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover;
+          align-self: center;
+        }
+      }
+      .right {
+        display: flex;
+        flex-direction: column;
+        h3 {
+          margin-top: 0;
+        }
+        span {
+          margin: 5px;
+        }
+      }
+    }
+  }
+}

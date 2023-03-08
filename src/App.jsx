@@ -4,6 +4,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Login from "./pages/login/Login";
 import AddStudent from "./pages/students/AddStudent";
+import StudentDetails from "./pages/students/StudentDetails";
 import Students from "./pages/students/Students";
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
           <div className="app-pages">
             {/* <Dashboard /> */}
             {/* <AddStudent /> */}
-            <Students/>
+            {/* <Students/> */}
+            <StudentDetails />
           </div>
         </div>
       </div>
