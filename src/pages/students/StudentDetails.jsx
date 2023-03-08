@@ -1,4 +1,4 @@
-import { EditOutlined } from "@mui/icons-material";
+import { EditOutlined, SmartphoneOutlined } from "@mui/icons-material";
 
 const StudentDetails = () => {
   return (
@@ -16,7 +16,10 @@ const StudentDetails = () => {
               alt=""
             />
             <h3>Student Student Student</h3>
-            <span>contact no here</span>
+            <div className="contact">
+              <SmartphoneOutlined className="icon" />
+              <span>03006536596</span>
+            </div>
           </div>
           <div className="right">
             <h3>Student Details</h3>
@@ -46,13 +49,25 @@ const StudentDetails = () => {
               <b>Admission Date: </b> father
             </span>
             <span>
-              <b>Prospectus Fee: </b> father
+              <b>Prospectus Fee: </b> 500 &emsp; &emsp;
+              <i>
+                <b>Balance: </b>
+                300
+              </i>
             </span>
             <span>
-              <b>Registration Fee: </b> father
+              <b>Registration Fee: </b> 3000 &emsp; &emsp;
+              <i>
+                <b>Balance: </b>
+                3000
+              </i>
+            </span>
+
+            <span>
+              <b>Tuition Fee: </b> 4500
             </span>
             <span>
-              <b>Address: </b> father
+              <b>Arrears: </b> 2345
             </span>
           </div>
         </div>
