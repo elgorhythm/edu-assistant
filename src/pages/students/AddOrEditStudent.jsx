@@ -10,8 +10,8 @@ import { classes } from "../../CONSTS";
 import { ClearOutlined, DoneOutlined } from "@mui/icons-material";
 import { student } from "../../temp";
 
-const AddStudent = (props) => {
-  const type = "asdf";
+const AddOrEditStudent = (props) => {
+  const type = "edit";
   const totalCount = 101;
   const user = { email: "adnan@email.com" };
 
@@ -31,28 +31,28 @@ const AddStudent = (props) => {
       address: data.get("address"),
       contactNo: data.get("contact"),
       prospectus: {
-        amount: data.get("prospectus"),
+        amount: +data.get("prospectus"),
         balance:
           type === "edit"
             ? student.prospectus.balance +
-              data.get("prospectus") -
+              +data.get("prospectus") -
               student.prospectus.amount
-            : data.get("prospectus"),
+            : +data.get("prospectus"),
       },
       registration: {
-        amount: data.get("registration"),
+        amount: +data.get("registration"),
         balance:
           type === "edit"
             ? student.registration.balance +
-              data.get("registration") -
+              +data.get("registration") -
               student.registration.amount
-            : data.get("registration"),
+            : +data.get("registration"),
       },
       tuition: {
-        amount: data.get("tuition"),
+        amount: +data.get("tuition"),
         payments: type === "edit" ? student.tuition.payments : [],
       },
-      arrears: data.get("arrears"),
+      arrears: +data.get("arrears"),
       createdBy: type === "edit" ? student.createdBy : user.email,
       createdAt: type === "edit" ? student.createdAt : new Date(),
     };
@@ -97,7 +97,7 @@ const AddStudent = (props) => {
             variant="standard"
             size="small"
             required
-            label="Registration No"
+            label="Registration No (auto generates)"
             name="regNo"
             className="text-field"
             defaultValue={
@@ -106,7 +106,8 @@ const AddStudent = (props) => {
                 : `${new Date().getFullYear()}-${totalCount + 1}`
             }
             InputLabelProps={{ shrink: true }}
-            disabled={true}
+            // disabled={true}
+            InputProps={{ readOnly: true }}
           />
           <TextField
             variant="standard"
@@ -234,4 +235,4 @@ const AddStudent = (props) => {
   );
 };
 
-export default AddStudent;
+export default AddOrEditStudent;

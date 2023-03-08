@@ -3,7 +3,7 @@ import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Login from "./pages/login/Login";
-import AddStudent from "./pages/students/AddStudent";
+import AddOrEditStudent from "./pages/students/AddOrEditStudent";
 import StudentDetails from "./pages/students/StudentDetails";
 import Students from "./pages/students/Students";
 
