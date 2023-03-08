@@ -21,7 +21,7 @@ function App() {
           </div>
           <div className="app-pages">
             {/* <Dashboard /> */}
-            {/* <AddStudent /> */}
+            <AddStudent />
             {/* <Students/> */}
             <StudentDetails />
           </div>

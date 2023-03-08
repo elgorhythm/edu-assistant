@@ -193,6 +193,34 @@ export const monthlyExpenses = {
   },
 };
 
+export const student = {
+  name: "ADNAN ATHER",
+  father: "M. ASGHAR",
+  regNo: "2022-123",
+  dateOfBirth: "2001-05-01",
+  gender: "Male",
+  class: "M.J",
+  section: "N/A",
+  address: "Jaranwala",
+  prospectus: {
+    amount: 500,
+    balance: 300,
+  },
+  registration: {
+    amount: 3000,
+    balance: 3000,
+  },
+  tuition: {
+    amount: 4500,
+    payments: ["2022-01"],
+  },
+  arrears: 2750,
+  contactNo: "033366123456",
+  admissionDate: "2023-03-01",
+  createdBy: "adnan@test.com",
+  createdAt: "08 Mar 2016 0439 hrs",
+};
+
 export const studentsList = [
   {
     name: "Student Student 1",

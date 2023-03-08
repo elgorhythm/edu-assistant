@@ -8,8 +8,10 @@ import {
 } from "@mui/material";
 import { classes } from "../../CONSTS";
 import { ClearOutlined, DoneOutlined } from "@mui/icons-material";
+import { student } from "../../temp";
 
-const AddStudent = () => {
+const AddStudent = (props) => {
+  const type = "edit";
   const totalCount = 101;
   const user = { email: "adnan@email.com" };
 
@@ -17,7 +19,7 @@ const AddStudent = () => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
 
-    let newStudent = {
+    let studentData = {
       name: data.get("name").toUpperCase(),
       father: data.get("father").toUpperCase(),
       regNo: data.get("regNo"),
@@ -44,11 +46,11 @@ const AddStudent = () => {
       createdBy: user.email,
       createdAt: new Date(),
     };
-    console.log(newStudent);
+    console.log(studentData);
   };
   return (
     <div className="add-student">
-      <h3>New Admission</h3>
+      <h3>{type === "edit" ? "Edit Student" : "New Admission"}</h3>
       <form onSubmit={handleSubmit}>
         <div className="text-fields-wrapper">
           <TextField
@@ -57,7 +59,7 @@ const AddStudent = () => {
             required
             label="Full Name"
             name="name"
-            defaultValue=""
+            defaultValue={type === "edit" ? student.name : ""}
             className="text-field"
             autoFocus
           />
@@ -67,7 +69,7 @@ const AddStudent = () => {
             required
             label="Father Name"
             name="father"
-            defaultValue=""
+            defaultValue={type === "edit" ? student.father : ""}
             className="text-field"
           />
           <TextField
@@ -78,7 +80,7 @@ const AddStudent = () => {
             name="adDate"
             className="text-field"
             type="date"
-            defaultValue=""
+            defaultValue={type === "edit" ? student.admissionDate : ""}
             InputLabelProps={{ shrink: true }}
           />
           <TextField
@@ -88,7 +90,11 @@ const AddStudent = () => {
             label="Registration No"
             name="regNo"
             className="text-field"
-            defaultValue={`${new Date().getFullYear()}-${totalCount + 1}`}
+            defaultValue={
+              type === "edit"
+                ? student.regNo
+                : `${new Date().getFullYear()}-${totalCount + 1}`
+            }
             InputLabelProps={{ shrink: true }}
             disabled={true}
           />
