@@ -1,0 +1,118 @@
+@import "../../global.scss";
+
+.collections {
+  border: 0.5px solid black;
+  .wrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .top-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .search-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        border: 0.5px solid lightgray;
+        padding: 7px 10px;
+        flex: 1;
+        @include mobile {
+          transform: scale(0.7);
+        }
+        .icon {
+          color: rgba(128, 128, 128, 0.766);
+          margin: none;
+          font-size: 20px;
+        }
+        input {
+          border: none;
+          outline: none;
+          width: 300px;
+          font-size: 14px;
+          @include mobile {
+            width: 150px;
+          }
+        }
+      }
+
+      .title-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        gap: 20px;
+
+        .filter {
+          width: 30px;
+          height: 30px;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: gray;
+          border: none;
+          outline: none;
+
+        position: relative;
+          //   background-color: #e9ffff;
+          &:hover {
+            background-color: lightblue;
+          }
+          .icon {
+            font-size: 18px;
+          }
+
+          .filter-selector {
+            height: 200px;
+            width: 200px;
+            border-radius: 10px;
+            background-color: yellow;
+            position: absolute;
+            top:0;
+            left:0;
+            transition: ease 2s;
+          }
+        }
+      }
+
+      .buttons-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
+        gap: 30px;
+        margin-right: 30px;
+        @include mobile {
+          gap: 10px;
+          margin-right: 0px;
+          transform: scale(0.7);
+        }
+        button {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          background-color: yellow;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5),
+            0 6px 20px 0 rgba(0, 0, 0, 0.2);
+          border: none;
+          outline: none;
+          &.add {
+            background-color: #0033cc;
+          }
+          &.print {
+            background-color: gray;
+          }
+        }
+      }
+    }
+  }
+}

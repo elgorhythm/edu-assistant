@@ -1,6 +1,7 @@
 import "./App.scss";
 import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
+import Collections from "./pages/accounts/Collections";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Login from "./pages/login/Login";
 import AddOrEditStudent from "./pages/students/AddOrEditStudent";
@@ -22,8 +23,9 @@ function App() {
           <div className="app-pages">
             {/* <Dashboard /> */}
             {/* <AddOrEditStudent /> */}
-            <Students/>
+            {/* <Students/> */}
             {/* <StudentDetails /> */}
+            <Collections/>
           </div>
         </div>
       </div>
