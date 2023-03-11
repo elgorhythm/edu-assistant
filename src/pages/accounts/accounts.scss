@@ -71,8 +71,7 @@
           .filter-selector {
             height: 200px;
             width: 200px;
-            border-radius: 10px;
-            background-color: yellow;
+            background-color: white;
             position: absolute;
             top: 0;
             left: 0;
@@ -80,10 +79,41 @@
             box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
             border-radius: 10px;
             padding: 10px;
-      
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h4{
+              margin: 10px 0px;
+            }
+            .radios-container {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 10px;
+              align-items: center;
+              justify-content: space-between;
+              padding: 5px;
+              .radio-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                gap: 10px;
+              }
+            }
+
             button {
-              height: 50px;
-              width: 50px;
+              height: 35px;
+              width: 80%;
+              margin-top: 20px;
+              background-color: $main-color;
+              color: white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              &:hover {
+                background-color: lightblue;
+                color: black;
+              }
             }
           }
         }
