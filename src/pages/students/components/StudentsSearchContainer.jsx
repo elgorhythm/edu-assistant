@@ -42,7 +42,7 @@ const StudentsSearchContainer = (props) => {
         </FormControl>
       </div>
       <div className="title-wrapper">
-        <h3>All Collections</h3>
+        <h3>All Students</h3>
       
       </div>
 

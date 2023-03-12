@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Loading from "../../components/loading/Loading";
 import { studentsList } from "../../temp";
@@ -14,13 +13,12 @@ const Students = () => {
     setSearchTerm(search);
   };
 
-  console.log('search term in students', searchTerm)
+  console.log("search term in students", searchTerm);
 
   return studentsList ? (
     <div className="students">
-      <h3>All Students</h3>
-      <StudentsSearchContainer getSearchTerm={getSearchTerm} />
-      <div className="students-container">
+      <div className="wrapper">
+        <StudentsSearchContainer getSearchTerm={getSearchTerm} />
         <StudentCard
           studentsList={studentsList}
           searchTerm={searchTerm}

@@ -2,14 +2,13 @@
 
 .students {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  h3 {
-    text-align: center;
-  }
-
-  .students-container {
+  .wrapper {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
   }
 }
 
@@ -258,6 +257,7 @@
 }
 
 .student-card {
+  width: 100%;
   table {
     width: 100%;
     border-collapse: collapse;
