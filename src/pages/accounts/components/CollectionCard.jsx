@@ -1,3 +1,4 @@
+import '../accounts.scss'
 import React from "react";
 
 const CollectionCard = (props) => {

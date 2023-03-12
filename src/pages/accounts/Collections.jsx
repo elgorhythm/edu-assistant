@@ -2,7 +2,7 @@ import "./accounts.scss";
 
 import React, { useState } from "react";
 import CollectionCard from "./components/CollectionCard";
-import SearchContainer from "./components/SearchContainer";
+import AcctsSearchContainer from "./components/AcctsSearchContainer";
 import { collectionsList } from "../../temp";
 import Loading from "../../components/loading/Loading";
 
@@ -26,7 +26,7 @@ const Collections = () => {
   return collectionsList ? (
     <div className="collections">
       <div className="wrapper">
-        <SearchContainer
+        <AcctsSearchContainer
           getSearchTerm={getSearchTerm}
           getDateRange={getDateRange}
         />

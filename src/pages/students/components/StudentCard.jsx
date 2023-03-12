@@ -1,9 +1,8 @@
+import '../students.scss'
 import React from "react";
 
 const StudentCard = (props) => {
-  const studentsList = props.studentsList;
-  const searchTerm = props.searchTerm;
-  const searchBy = props.searchBy;
+  const {studentsList, searchTerm, searchBy} = props
 
   return (
     <div className="student-card">

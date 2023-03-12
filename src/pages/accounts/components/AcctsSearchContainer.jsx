@@ -1,4 +1,4 @@
-import "./components.scss";
+import "../accounts.scss";
 
 import { useState } from "react";
 import {
@@ -9,10 +9,10 @@ import {
   TuneOutlined,
 } from "@mui/icons-material";
 
-const SearchContainer = (props) => {
+const AcctsSearchContainer = (props) => {
+  const { getSearchTerm, getDateRange } = props;
   const [filterDisplay, setFilterDisplay] = useState(false);
   const [range, setRange] = useState("week");
-  const { getSearchTerm, getDateRange } = props;
 
   const radioChange = (range) => {
     setRange(range);
@@ -20,7 +20,7 @@ const SearchContainer = (props) => {
   };
 
   return (
-    <div className="search-container">
+    <div className="accts-search-container">
       <div className="search-wrapper">
         <SearchOutlined className="icon" />
         <input onChange={(e) => getSearchTerm(e.target.value)} />
@@ -105,4 +105,4 @@ const SearchContainer = (props) => {
   );
 };
 
-export default SearchContainer;
+export default AcctsSearchContainer;
