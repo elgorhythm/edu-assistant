@@ -8,7 +8,7 @@ import {
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 const StudentsSearchContainer = (props) => {
-  const { getSearchTerm } = props;
+  const { getSearchTerm, getSearchBy } = props;
 
   return (
     <div className="students-search-container">
@@ -20,7 +20,7 @@ const StudentsSearchContainer = (props) => {
           <Select
             size="small"
             defaultValue="name"
-            onChange={(e) => setSearchBy(e.target.value)}
+            onChange={(e) => getSearchBy(e.target.value)}
             sx={{ fontSize: "12px", borderBottom: "none" }}
           >
             <MenuItem value="name" sx={{ fontSize: "12px" }}>

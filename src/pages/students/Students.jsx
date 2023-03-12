@@ -12,13 +12,14 @@ const Students = () => {
   const getSearchTerm = (search) => {
     setSearchTerm(search);
   };
-
-  console.log("search term in students", searchTerm);
+  const getSearchBy = (menuItem) => {
+    setSearchBy(menuItem);
+  };
 
   return studentsList ? (
     <div className="students">
       <div className="wrapper">
-        <StudentsSearchContainer getSearchTerm={getSearchTerm} />
+        <StudentsSearchContainer getSearchTerm={getSearchTerm} getSearchBy={getSearchBy} />
         <StudentCard
           studentsList={studentsList}
           searchTerm={searchTerm}
