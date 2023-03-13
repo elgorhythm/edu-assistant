@@ -8,7 +8,7 @@ import Loading from "../../components/loading/Loading";
 
 const Collections = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchBy, setSearchBy] = useState("studentName");
+  const [searchBy, setSearchBy] = useState("date");
   const [dateRange, setDateRange] = useState("week");
 
   // const collectionsList = null;
@@ -20,8 +20,13 @@ const Collections = () => {
     setDateRange(range);
   };
 
-  console.log(searchTerm);
-  console.log(dateRange);
+  const getSearchBy = (menuItem) => {
+    setSearchBy(menuItem);
+  };
+
+  // console.log(searchTerm);
+  // console.log(dateRange);
+  console.log('searchby is ',searchBy);
 
   return collectionsList ? (
     <div className="collections">
@@ -29,6 +34,7 @@ const Collections = () => {
         <AcctsSearchContainer
           getSearchTerm={getSearchTerm}
           getDateRange={getDateRange}
+          getSearchBy={getSearchBy}
         />
         <CollectionCard
           collectionsList={collectionsList}
