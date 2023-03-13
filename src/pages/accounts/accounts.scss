@@ -25,7 +25,7 @@
     justify-content: flex-start;
     gap: 10px;
     border: 0.5px solid lightgray;
-    padding: 7px 10px;
+    padding: 0px 10px;
     flex: 1;
     @include mobile {
       transform: scale(0.7);
@@ -42,6 +42,17 @@
       font-size: 14px;
       @include mobile {
         width: 150px;
+      }
+    }
+    .form-control {
+      width: 100px;
+      border: 0;
+      .input-label {
+        font-size: 10px;
+        margin-top: 5px;
+      }
+      .menu-item {
+        font-size: 12px;
       }
     }
   }

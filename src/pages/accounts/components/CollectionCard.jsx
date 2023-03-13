@@ -1,4 +1,4 @@
-import '../accounts.scss'
+import "../accounts.scss";
 import React from "react";
 
 const CollectionCard = (props) => {
@@ -39,7 +39,9 @@ const CollectionCard = (props) => {
                     ? income.studentRegNo
                     : "-"}
                 </td>
-                <td id="category">{income.category}</td>
+                <td id="category">
+                  {income.category.match(/[A-Z][a-z]+|[0-9]+/g).join(" ")}
+                </td>
                 <td id="month">
                   {income.category === "Tuition"
                     ? `${income.month}-${income.year}`
