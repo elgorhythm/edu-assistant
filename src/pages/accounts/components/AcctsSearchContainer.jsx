@@ -11,9 +11,10 @@ import {
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 const AcctsSearchContainer = (props) => {
-  const { getSearchTerm, getSearchBy, getDateRange } = props;
+  const { getSearchTerm, getSearchBy, getDateRange, title } = props;
   const [filterDisplay, setFilterDisplay] = useState(false);
   const [range, setRange] = useState("week");
+  
 
   const radioChange = (range) => {
     setRange(range);
@@ -49,7 +50,7 @@ const AcctsSearchContainer = (props) => {
         </FormControl>
       </div>
       <div className="title-wrapper">
-        <h3>All Collections</h3>
+        <h3>{title}</h3>
         <div className="filter">
           <div
             className="icon"
@@ -93,7 +94,7 @@ const AcctsSearchContainer = (props) => {
               <div className="radio-wrapper">
                 {new Date().getFullYear()}
                 <input
-                  type="radiO"
+                  type="radio"
                   value={`${new Date().getFullYear()}`}
                   checked={range === `${new Date().getFullYear()}`}
                   onChange={(e) => radioChange(e.target.value)}
@@ -102,7 +103,7 @@ const AcctsSearchContainer = (props) => {
               <div className="radio-wrapper">
                 {new Date().getFullYear() - 1}
                 <input
-                  type="radiO"
+                  type="radio"
                   value={`${new Date().getFullYear() - 1}`}
                   checked={range === `${new Date().getFullYear() - 1}`}
                   onChange={(e) => radioChange(e.target.value)}

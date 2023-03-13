@@ -35,6 +35,7 @@ const Collections = () => {
           getSearchTerm={getSearchTerm}
           getDateRange={getDateRange}
           getSearchBy={getSearchBy}
+          title="All Collections"
         />
         <CollectionCard
           collectionsList={collectionsList}

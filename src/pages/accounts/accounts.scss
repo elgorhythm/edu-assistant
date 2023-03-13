@@ -1,6 +1,6 @@
 @import "../../global.scss";
 
-.collections {
+.collections, .expenses {
   width: 100%;
   .wrapper {
     padding: 20px;
@@ -251,3 +251,88 @@
     }
   }
 }
+
+.expense-card {
+  width: 100%;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    thead {
+      background-color: lightblue;
+      -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+      box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+      border-radius: 3px;
+      position: sticky;
+      top: $nav-height;
+
+      th {
+        padding: 10px;
+        font-size: 16px;
+        @include mobile {
+          font-size: 10px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+        box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover {
+          background-color: rgba(173, 216, 230, 0.3);
+        }
+        td {
+          font-size: 14px;
+          padding: 7px;
+
+          @include mobile {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+
+    tr {
+      margin-bottom: 10px;
+
+      #sr {
+        flex: 0.5;
+        text-align: center;
+      }
+      #date {
+        flex: 1;
+        text-align: center;
+      }
+      #name {
+        flex: 2;
+        text-align: left;
+      }
+      #reg-no {
+        flex: 1;
+        text-align: left;
+        text-align: center;
+        @include mobile {
+          display: none;
+        }
+      }
+      #category {
+        flex: 1;
+        text-align: left;
+      }
+      #month {
+        flex: 1;
+        text-align: center;
+      }
+      #amount {
+        flex: 1;
+        text-align: center;
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
