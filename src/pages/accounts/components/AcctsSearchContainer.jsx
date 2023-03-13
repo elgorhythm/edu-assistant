@@ -8,9 +8,10 @@ import {
   SearchOutlined,
   TuneOutlined,
 } from "@mui/icons-material";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 const AcctsSearchContainer = (props) => {
-  const { getSearchTerm, getDateRange } = props;
+  const { getSearchTerm, getSearchBy, getDateRange } = props;
   const [filterDisplay, setFilterDisplay] = useState(false);
   const [range, setRange] = useState("week");
 
@@ -24,6 +25,28 @@ const AcctsSearchContainer = (props) => {
       <div className="search-wrapper">
         <SearchOutlined className="icon" />
         <input onChange={(e) => getSearchTerm(e.target.value)} />
+        <FormControl className="form-control" variant="standard">
+          <InputLabel className="input-label">Search by</InputLabel>
+          <Select
+            size="small"
+            defaultValue="date"
+            onChange={(e) => getSearchBy(e.target.value)}
+            sx={{ fontSize: "12px", borderBottom: "none" }}
+          >
+            <MenuItem value="date" sx={{ fontSize: "12px" }}>
+              Date
+            </MenuItem>
+            <MenuItem value="studentName" sx={{ fontSize: "12px" }}>
+              Student
+            </MenuItem>
+            <MenuItem value="studentRegNo" sx={{ fontSize: "12px" }}>
+              Reg No.
+            </MenuItem>
+            <MenuItem value="category" sx={{ fontSize: "12px" }}>
+              Category
+            </MenuItem>
+          </Select>
+        </FormControl>
       </div>
       <div className="title-wrapper">
         <h3>All Collections</h3>
