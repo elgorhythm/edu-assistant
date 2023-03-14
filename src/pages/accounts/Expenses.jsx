@@ -3,6 +3,7 @@ import {useState} from 'react';
 import AcctsSearchContainer from "./components/AcctsSearchContainer";
 import ExpenseCard from "./components/ExpenseCard";
 import { expensesList } from "../../temp";
+import Loading from "../../components/loading/Loading";
 
 
 const Expenses = () => {
@@ -22,8 +23,11 @@ const Expenses = () => {
   const getSearchBy = (menuItem) => {
     setSearchBy(menuItem);
   };
+  
+  console.log(searchBy)
+  
 
-  return (
+  return expensesList? (
     <div className="expenses">
       <div className="wrapper">
         <AcctsSearchContainer
@@ -39,7 +43,7 @@ const Expenses = () => {
         />
       </div>
     </div>
-  );
+  ):<Loading/>;
 };
 
 export default Expenses;

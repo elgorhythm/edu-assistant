@@ -14,20 +14,11 @@ const AcctsSearchContainer = (props) => {
   const { getSearchTerm, getSearchBy, getDateRange, title } = props;
   const [filterDisplay, setFilterDisplay] = useState(false);
   const [range, setRange] = useState("week");
-  
-
-  const radioChange = (range) => {
-    setRange(range);
-    getDateRange(range);
-  };
-
-  return (
-    <div className="accts-search-container">
-      <div className="search-wrapper">
-        <SearchOutlined className="icon" />
-        <input onChange={(e) => getSearchTerm(e.target.value)} />
-        <FormControl className="form-control" variant="standard">
-          <InputLabel className="input-label">Search by</InputLabel>
+  let MenuList;
+  switch (title) {
+    case "All Collections":
+      MenuList = (
+        <>
           <Select
             size="small"
             defaultValue="date"
@@ -47,6 +38,48 @@ const AcctsSearchContainer = (props) => {
               Category
             </MenuItem>
           </Select>
+        </>
+      );
+      break;
+    case "All Expenses":
+      MenuList = (
+        <>
+          <Select
+            size="small"
+            defaultValue="date"
+            onChange={(e) => getSearchBy(e.target.value)}
+            sx={{ fontSize: "12px", borderBottom: "none" }}
+          >
+            <MenuItem value="date" sx={{ fontSize: "12px" }}>
+              Date
+            </MenuItem>
+            <MenuItem value="staffName" sx={{ fontSize: "12px" }}>
+              Staff
+            </MenuItem>
+            <MenuItem value="category" sx={{ fontSize: "12px" }}>
+              Category
+            </MenuItem>
+          </Select>
+        </>
+      );
+      break;
+    default:
+      break;
+  }
+
+  const radioChange = (range) => {
+    setRange(range);
+    getDateRange(range);
+  };
+
+  return (
+    <div className="accts-search-container">
+      <div className="search-wrapper">
+        <SearchOutlined className="icon" />
+        <input onChange={(e) => getSearchTerm(e.target.value)} />
+        <FormControl className="form-control" variant="standard">
+          <InputLabel className="input-label">Search by</InputLabel>
+          {MenuList}
         </FormControl>
       </div>
       <div className="title-wrapper">
