@@ -831,7 +831,7 @@ export const expensesList = [
     createdAt: "jan 2023",
     createdBy: "adnan@test",
     date: "2023-03-11",
-    description: "laddu",
+    description: "laddu asdfasdf asdfasd asdfasdf asdfa asdfasdfasd asdfas ",
     month: null,
     staffName: null,
     staffPaymentType: null,

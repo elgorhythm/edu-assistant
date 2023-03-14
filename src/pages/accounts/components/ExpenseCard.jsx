@@ -32,7 +32,7 @@ const ExpenseCard = (props) => {
                   {expense.category === "Staff" && `(${expense.staffName})`}
                 </td>
                 <td id="description">{expense.description}</td>
-                <td id="amount">{expense.amount}</td>
+                <td id="amount">{expense.amount.toLocaleString("en-US")}</td>
               </tr>
             ))}
         </tbody>
